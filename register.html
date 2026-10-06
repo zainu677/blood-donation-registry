@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create New Account | Blood Donation Registry</title>
+<link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+  <div class="register-container">
+    <div class="register-card">
+      <h1>Create New Account</h1>
+      <p class="subtitle">Register as a donor or recipient to get started</p>
+
+      <form id="register-form" action="register.php" method="POST">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="e.g. John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Choose a username" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 0712 345 678" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="role">Register As</label>
+            <select id="role" name="role" required>
+              <option value="" disabled selected>Select role</option>
+              <option value="donor">Donor</option>
+            
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="blood_group">Blood Group (if Donor)</label>
+            <select id="blood_group" name="blood_group">
+              <option value="" selected>Not applicable</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="1" max="120" placeholder="e.g. 25" required>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="City / District" required>
+          </div>
+        </div>
+
+        <div class="terms">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the Terms of Service and Privacy Policy</label>
+        </div>
+
+        <button type="submit" class="btn-submit">Create Account</button>
+
+        <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
+
+      </form>
+    </div>
+  </div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

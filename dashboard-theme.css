@@ -1,0 +1,437 @@
+/* dashboard-theme.css - shared look for every logged-in page (donor, hospital, recipient, admin) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: #f4f5f7;
+  color: #222;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #7f0000, #1a1a1a);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 24px 22px;
+  font-weight: 700;
+  font-size: 19px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 18px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  transition: 0.2s ease;
+}
+
+.sidebar nav a span.emoji {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.sidebar nav a.active {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border-left-color: #fff;
+}
+
+.sidebar .logout-link {
+  margin-top: auto;
+  padding: 12px 24px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 18px;
+  margin-left: 0;
+}
+
+.sidebar .logout-link:hover {
+  color: #fff;
+}
+
+/* ===== Main area ===== */
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar {
+  background: #fff;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.topbar h1 {
+  font-size: 20px;
+  color: #222;
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #444;
+  font-weight: 600;
+}
+
+.avatar-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #b71c1c, #8e0000);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.page-content {
+  padding: 30px 32px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== Hero banner ===== */
+.hero-banner {
+  border-radius: 16px;
+  padding: 34px 40px;
+  margin-bottom: 28px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-banner h2 {
+  font-size: 23px;
+  margin-bottom: 6px;
+}
+
+.hero-banner p {
+  font-size: 14px;
+  opacity: 0.92;
+  max-width: 480px;
+}
+
+.hero-banner svg {
+  flex-shrink: 0;
+}
+
+.hero-banner.donor     { background: linear-gradient(135deg, #7f0000, #b71c1c); }
+.hero-banner.hospital  { background: linear-gradient(135deg, #0d47a1, #1976d2); }
+.hero-banner.recipient { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+.hero-banner.bank      { background: linear-gradient(135deg, #004d40, #00796b); }
+.hero-banner.admin     { background: linear-gradient(135deg, #212121, #424242); }
+
+/* ===== Stat cards ===== */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 22px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card .stat-num {
+  font-size: 26px;
+  font-weight: 700;
+  color: #b71c1c;
+}
+
+.stat-card .stat-label {
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
+}
+
+/* ===== Action cards (dashboard shortcuts) ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.action-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: 0.25s ease;
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+}
+
+.icon-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 14px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+.icon-badge.blue   { background: #e3f2fd; }
+.icon-badge.red    { background: #ffebee; }
+.icon-badge.yellow { background: #fff8e1; }
+.icon-badge.green  { background: #e8f5e9; }
+.icon-badge.purple { background: #f3e5f5; }
+.icon-badge.dark   { background: #eceff1; }
+
+.action-card h3 {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.action-card p {
+  font-size: 12px;
+  color: #888;
+}
+
+/* ===== Section card (wraps forms/tables on sub-pages) ===== */
+.section-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px 32px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+}
+
+.section-card h1 {
+  font-size: 21px;
+  color: #222;
+  margin-bottom: 6px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f4f5f7;
+}
+
+.section-card .subtitle {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.banner-msg {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.banner-msg.success { background: #d4edda; color: #155724; }
+.banner-msg.warning  { background: #fff3cd; color: #856404; }
+.banner-msg.info     { background: #d1ecf1; color: #0c5460; }
+
+/* ===== Form utilities (used across profile/booking/search/etc pages) ===== */
+.form-grid {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.form-field {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fafafa;
+  font-family: inherit;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #b71c1c;
+  box-shadow: 0 0 0 3px rgba(183, 28, 28, 0.12);
+  background: #fff;
+}
+
+.form-field input:disabled {
+  background: #f0f0f0;
+  color: #888;
+  border-color: #ddd;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 13px;
+  background: #b71c1c;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #8e0000;
+}
+
+/* ===== Badges (status pills used in tables) ===== */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.badge.success { background: #d4edda; color: #155724; }
+.badge.warning { background: #fff3cd; color: #856404; }
+.badge.danger  { background: #f8d7da; color: #721c24; }
+.badge.info    { background: #d1ecf1; color: #0c5460; }
+.badge.neutral { background: #e9ecef; color: #495057; }
+
+/* ===== Polished tables ===== */
+.results-table tr:nth-child(even):not(:first-child) {
+  background: #fcfcfd;
+}
+
+.results-table tr:not(:first-child):hover {
+  background: #fafafa;
+}
+
+/* ===== Subtle entrance animation ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-banner,
+.stat-row,
+.cards,
+.section-card {
+  animation: fadeInUp 0.35s ease-out;
+}
+
+/* Slight accent bar on stat cards for a more finished feel */
+.stat-card {
+  border-left: 4px solid #b71c1c;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 850px) {
+  .sidebar {
+    width: 74px;
+  }
+  .sidebar .brand span.text,
+  .sidebar nav a span.label,
+  .sidebar .logout-link span.label {
+    display: none;
+  }
+  .sidebar nav a,
+  .sidebar .logout-link {
+    justify-content: center;
+    padding: 14px 0;
+  }
+  .page-content {
+    padding: 22px 16px 50px;
+  }
+  .topbar {
+    padding: 16px 18px;
+  }
+  .hero-banner {
+    padding: 26px 24px;
+  }
+}
